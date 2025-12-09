@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(cat:*)",
+      "Bash(ren \"ITINERARY - JZ & DR Arizona Dec. 2025 Trip\" \"SDA - Itinerary - JZ & DR Arizona Trip - Dec 2025\")",
+      "Bash(powershell.exe:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
