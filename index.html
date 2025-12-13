@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joan & DJ's Arizona Getaway | Dec 11-16, 2025</title>
-
+    <title>Joan & DJ's Arizona Adventure | Dec 2025</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -18,39 +17,22 @@
         }
 
         :root {
-            --cream: #faf8f5;
-            --white: #ffffff;
+            --sunset-orange: #f97316;
+            --sunset-pink: #ec4899;
+            --desert-sand: #fef3c7;
+            --warm-white: #fffbeb;
+            --cactus-green: #22c55e;
+            --sky-blue: #0ea5e9;
+            --night-blue: #1e3a5f;
             --charcoal: #1f2937;
-            --charcoal-light: #374151;
-            --terracotta: #c45c26;
-            --terracotta-light: rgba(196, 92, 38, 0.08);
-            --terracotta-medium: rgba(196, 92, 38, 0.15);
-            --sage: #4a7c59;
-            --sage-light: rgba(74, 124, 89, 0.08);
-            --sage-medium: rgba(74, 124, 89, 0.15);
-            --gold: #d4a853;
-            --gold-light: rgba(212, 168, 83, 0.15);
-            --sky: #3b82f6;
-            --sky-light: rgba(59, 130, 246, 0.1);
-            --purple: #7c3aed;
-            --purple-light: rgba(124, 58, 237, 0.1);
-            --rose: #e11d48;
-            --rose-light: rgba(225, 29, 72, 0.1);
-            --emerald: #10b981;
-            --emerald-light: rgba(16, 185, 129, 0.1);
-            --sand: #e8ddd4;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --radius: 16px;
+            --soft-gray: #6b7280;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --gradient-sunset: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%);
+            --gradient-warm: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --radius: 20px;
             --radius-sm: 12px;
-            --radius-xs: 8px;
-            --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
-            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04);
         }
 
         html {
@@ -58,2220 +40,1191 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--cream);
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #fef3c7 0%, #fff7ed 50%, #fdf4ff 100%);
             color: var(--charcoal);
-            line-height: 1.7;
-            font-size: 16px;
+            line-height: 1.6;
+            min-height: 100vh;
         }
 
-        /* ===== STICKY NAVIGATION ===== */
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, 20px) rotate(5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            background: var(--gradient-sunset);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: var(--soft-gray);
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
+        .hero-dates {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            padding: 16px 28px;
+            border-radius: 100px;
+            box-shadow: var(--shadow-soft);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .hero-dates .icon {
+            font-size: 1.4rem;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--soft-gray);
+            font-size: 0.9rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .scroll-arrow {
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid var(--soft-gray);
+            border-bottom: 2px solid var(--soft-gray);
+            transform: rotate(45deg);
+        }
+
+        /* ===== QUICK INFO CARDS ===== */
+        .quick-info {
+            padding: 40px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quick-info h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: var(--charcoal);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .info-card .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .info-card h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--soft-gray);
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--charcoal);
+        }
+
+        .info-card .address {
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--soft-gray);
+            margin-top: 4px;
+        }
+
+        /* ===== DAY NAVIGATION ===== */
         .day-nav {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--gray-200);
-            padding: 0 16px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            background: rgba(255, 251, 235, 0.9);
+            backdrop-filter: blur(20px);
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .day-nav-inner {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
             display: flex;
-            align-items: center;
             gap: 8px;
             overflow-x: auto;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            padding: 12px 0;
+            padding: 4px 0;
         }
 
         .day-nav-inner::-webkit-scrollbar {
             display: none;
         }
 
-        .day-nav-label {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            white-space: nowrap;
-            padding-right: 8px;
-            border-right: 1px solid var(--gray-300);
-            margin-right: 8px;
-        }
-
         .day-nav a {
+            flex-shrink: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 8px 16px;
-            border-radius: 50px;
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
             text-decoration: none;
-            color: var(--charcoal);
-            font-size: 13px;
+            color: var(--soft-gray);
+            font-size: 0.85rem;
             font-weight: 500;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            background: transparent;
         }
 
         .day-nav a:hover {
-            background: var(--terracotta-light);
-            border-color: var(--terracotta);
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--sunset-orange);
         }
 
         .day-nav a.active {
-            background: var(--terracotta);
+            background: var(--sunset-orange);
             color: white;
         }
 
         .day-nav a.completed {
-            background: var(--emerald-light);
-            border-color: var(--emerald);
+            color: var(--cactus-green);
         }
 
-        .day-nav a span.day-abbr {
-            font-weight: 700;
-            font-size: 14px;
+        .day-nav a.completed.active {
+            background: var(--cactus-green);
+            color: white;
         }
 
-        .day-nav a span.day-date {
-            font-size: 11px;
-            opacity: 0.7;
-        }
-
-        /* ===== HERO ===== */
-        .hero-banner {
-            position: relative;
-            width: 100%;
-            min-height: 400px;
-            background: linear-gradient(135deg,
-                rgba(232, 196, 168, 0.4) 0%,
-                rgba(200, 150, 122, 0.5) 50%,
-                rgba(139, 113, 102, 0.6) 100%),
-                url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-banner::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
-            background: linear-gradient(to bottom, transparent, var(--cream));
-        }
-
-        .hero {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            padding: 40px 24px;
-        }
-
-        .hero .dates {
-            display: inline-block;
-            font-size: 13px;
+        .day-nav .day-abbr {
             font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--terracotta);
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px 24px;
-            border-radius: 50px;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-soft);
+            font-size: 0.9rem;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(36px, 7vw, 56px);
-            font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 16px;
-            line-height: 1.1;
-            text-shadow: 0 2px 20px rgba(255, 255, 255, 0.8);
+        .day-nav .day-num {
+            font-size: 0.75rem;
+            opacity: 0.8;
         }
 
-        .hero .subtitle {
-            font-size: 18px;
-            color: var(--charcoal);
-            font-weight: 400;
-            opacity: 0.9;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
-        }
-
-        /* ===== CONTAINER ===== */
-        .container {
-            max-width: 900px;
+        /* ===== DAYS CONTAINER ===== */
+        .days-container {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 32px 20px;
+            padding: 40px 20px 80px;
         }
-
-        /* ===== TRIP OVERVIEW ===== */
-        .trip-overview {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 32px;
-            margin-bottom: 48px;
-            box-shadow: var(--shadow-medium);
-            border: 2px solid var(--sage);
-        }
-
-        .trip-overview h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: var(--sage);
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-
-        .overview-card {
-            background: var(--gray-50);
-            padding: 20px;
-            border-radius: var(--radius-sm);
-            border-left: 4px solid var(--terracotta);
-        }
-
-        .overview-card h4 {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--terracotta);
-            margin-bottom: 12px;
-        }
-
-        .overview-card p {
-            font-size: 15px;
-            margin-bottom: 4px;
-        }
-
-        .overview-card .name {
-            font-weight: 700;
-            color: var(--charcoal);
-        }
-
-        .overview-card .address {
-            font-size: 14px;
-            color: var(--gray-500);
-        }
-
-        .drive-times {
-            background: var(--sage-light);
-            padding: 24px;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--sage-medium);
-        }
-
-        .drive-times h4 {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--sage);
-            margin-bottom: 16px;
-        }
-
-        .drive-times ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 8px;
-        }
-
-        .drive-times li {
-            font-size: 14px;
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--sage-medium);
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .drive-times li:last-child {
-            border-bottom: none;
-        }
-
-        .drive-times .route {
-            font-weight: 600;
-            color: var(--charcoal);
-        }
-
-        .drive-times .time {
-            color: var(--sage);
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        /* ===== ACTIVITY TYPE BADGES ===== */
-        .activity-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 5px 12px;
-            border-radius: 50px;
-            white-space: nowrap;
-        }
-
-        .badge-food { background: var(--gold-light); color: #92400e; }
-        .badge-drive { background: var(--sky-light); color: #1d4ed8; }
-        .badge-outdoors { background: var(--sage-medium); color: #166534; }
-        .badge-event { background: var(--purple-light); color: #5b21b6; }
-        .badge-lodging { background: var(--terracotta-light); color: var(--terracotta); }
-        .badge-medical { background: var(--rose-light); color: var(--rose); }
-        .badge-work { background: var(--gray-200); color: var(--gray-600); }
-        .badge-family { background: rgba(236, 72, 153, 0.1); color: #be185d; }
 
         /* ===== DAY SECTION ===== */
         .day-section {
-            margin-bottom: 48px;
-            scroll-margin-top: 80px;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .day-section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .day-header {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 28px 32px;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-medium);
-            border-left: 6px solid var(--terracotta);
-            position: relative;
-            overflow: hidden;
+            text-align: center;
+            margin-bottom: 32px;
         }
 
-        .day-header.completed {
-            border-left-color: var(--emerald);
-        }
-
-        .day-header.completed::before {
-            background: linear-gradient(90deg, transparent, var(--emerald-light));
-        }
-
-        .day-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, var(--terracotta-light));
-            opacity: 0.5;
-        }
-
-        .day-header .day-label {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--white);
-            background: var(--terracotta);
-            padding: 6px 16px;
-            border-radius: 50px;
+        .day-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: 12px;
         }
 
-        .day-header.completed .day-label {
-            background: var(--emerald);
+        .day-badge.upcoming {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(139, 92, 246, 0.15));
+            color: var(--sky-blue);
         }
 
-        .status-badge {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-left: 12px;
-        }
-
-        .status-badge.done {
-            background: var(--emerald-light);
-            color: var(--emerald);
-        }
-
-        .status-badge.upcoming {
-            background: var(--sky-light);
-            color: var(--sky);
+        .day-badge.completed {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--cactus-green);
         }
 
         .day-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--charcoal);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             margin-bottom: 8px;
-            line-height: 1.2;
-            position: relative;
+            color: var(--charcoal);
         }
 
         .day-header .day-theme {
-            font-size: 15px;
-            color: var(--gray-500);
-            font-weight: 400;
-            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--soft-gray);
         }
 
-        /* ===== DAY HIGHLIGHTS (Quick Summary) ===== */
-        .day-highlights {
+        /* ===== EVENT CARDS ===== */
+        .events-list {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px dashed var(--gray-300);
-        }
-
-        .highlight-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--gray-100);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--charcoal);
-        }
-
-        .highlight-chip .icon {
-            font-size: 14px;
-        }
-
-        /* ===== TIMELINE ===== */
-        .timeline {
-            position: relative;
-            padding-left: 32px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 11px;
-            top: 24px;
-            bottom: 24px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--terracotta), var(--sage), var(--terracotta));
-            border-radius: 2px;
-        }
-
-        /* ===== TIMELINE EVENT ===== */
-        .timeline-event {
-            position: relative;
-            margin-bottom: 16px;
-        }
-
-        .timeline-event:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -32px;
-            top: 24px;
-            width: 24px;
-            height: 24px;
-            background: var(--white);
-            border: 3px solid var(--terracotta);
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        .timeline-event.major .timeline-dot {
-            width: 28px;
-            height: 28px;
-            left: -34px;
-            background: var(--terracotta);
-            border-width: 4px;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .event-card {
-            background: var(--white);
-            border-radius: var(--radius-sm);
-            padding: 20px 24px;
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--gray-200);
-            transition: all 0.2s ease;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-sunset);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .event-card:hover {
-            box-shadow: var(--shadow-soft);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
-        .event-card.highlight-card {
-            border: 2px solid var(--terracotta);
-            background: linear-gradient(135deg, var(--white), var(--terracotta-light));
+        .event-card:hover::before {
+            opacity: 1;
         }
 
-        .event-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 12px;
-            margin-bottom: 12px;
+        .event-card.highlight {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(249, 115, 22, 0.2);
         }
 
-        .event-time {
+        .event-card.highlight::before {
+            opacity: 1;
+        }
+
+        .event-time-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--terracotta);
-            background: var(--terracotta-light);
-            padding: 4px 12px;
-            border-radius: var(--radius-xs);
+            background: var(--gradient-warm);
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sunset-orange);
+            margin-bottom: 12px;
         }
 
-        .event-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--charcoal);
+        .event-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
             margin-bottom: 8px;
-            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .event-card h3 .emoji {
+            font-size: 1.4rem;
+        }
+
+        .event-card p {
+            color: var(--soft-gray);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .event-card p:last-child {
+            margin-bottom: 0;
         }
 
         .event-location {
             display: flex;
             align-items: flex-start;
             gap: 8px;
-            font-size: 14px;
-            color: var(--sage);
-            font-weight: 600;
-            margin-bottom: 10px;
-            padding: 10px 14px;
-            background: var(--sage-light);
-            border-radius: var(--radius-xs);
-            border-left: 3px solid var(--sage);
+            background: var(--desert-sand);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            margin-top: 12px;
+            font-size: 0.9rem;
         }
 
         .event-location .loc-icon {
+            font-size: 1.1rem;
             flex-shrink: 0;
         }
 
-        .event-details {
-            font-size: 15px;
-            color: var(--charcoal-light);
-            line-height: 1.7;
-        }
-
-        .event-details p {
-            margin-bottom: 10px;
-        }
-
-        .event-details p:last-child {
-            margin-bottom: 0;
-        }
-
-        .event-details ul {
-            margin: 12px 0 12px 20px;
-        }
-
-        .event-details li {
-            margin-bottom: 6px;
-        }
-
-        .event-details strong {
+        .event-location strong {
+            display: block;
             color: var(--charcoal);
+            margin-bottom: 2px;
+        }
+
+        .event-location span {
+            color: var(--soft-gray);
+            font-size: 0.85rem;
         }
 
         /* ===== OPTIONS BOX ===== */
         .options-box {
-            margin-top: 16px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(139, 92, 246, 0.08));
+            border-radius: var(--radius-sm);
             padding: 16px 20px;
-            background: var(--gray-50);
-            border-radius: var(--radius-xs);
-            border: 1px dashed var(--gray-300);
+            margin-top: 12px;
         }
 
-        .options-box h5 {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--sage);
+        .options-box h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--sky-blue);
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .options-box ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .options-box li {
-            position: relative;
-            padding: 8px 0 8px 24px;
-            border-bottom: 1px solid var(--gray-200);
-            font-size: 14px;
-        }
-
-        .options-box li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--charcoal);
         }
 
         .options-box li::before {
-            content: "›";
-            position: absolute;
-            left: 0;
-            color: var(--terracotta);
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        /* ===== SPECIAL HIGHLIGHT BOX ===== */
-        .info-box {
-            margin-top: 16px;
-            padding: 20px;
-            border-radius: var(--radius-xs);
-            font-size: 14px;
-        }
-
-        .info-box.event-info {
-            background: linear-gradient(135deg, var(--purple-light), rgba(167, 139, 250, 0.1));
-            border: 1px solid rgba(124, 58, 237, 0.2);
-        }
-
-        .info-box.key-changes {
-            background: linear-gradient(135deg, var(--sky-light), rgba(59, 130, 246, 0.05));
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .info-box.timing-note {
-            background: var(--gold-light);
-            border: 1px solid rgba(212, 168, 83, 0.3);
-        }
-
-        .info-box h5 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--charcoal);
-        }
-
-        .info-box ul {
-            margin: 10px 0 0 20px;
-        }
-
-        .info-box li {
-            margin-bottom: 6px;
+            content: '→';
+            color: var(--sky-blue);
+            font-weight: 600;
         }
 
         /* ===== PERIOD DIVIDER ===== */
-        .period-label {
+        .period-divider {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin: 32px 0 20px 0;
-            padding-left: 32px;
+            gap: 16px;
+            margin: 32px 0 20px;
         }
 
-        .period-label span {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--sage);
-            background: var(--sage-light);
-            padding: 6px 16px;
-            border-radius: 50px;
-        }
-
-        .period-label::after {
+        .period-divider::before,
+        .period-divider::after {
             content: '';
             flex: 1;
             height: 1px;
-            background: linear-gradient(to right, var(--sage-medium), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
         }
 
-        /* ===== ANCHOR RULES ===== */
-        .anchor-rules {
-            background: var(--white);
+        .period-divider span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--soft-gray);
+            white-space: nowrap;
+        }
+
+        /* ===== KEY INFO BOX ===== */
+        .key-info-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(14, 165, 233, 0.1));
+            border: 1px solid rgba(34, 197, 94, 0.2);
             border-radius: var(--radius);
-            padding: 32px;
-            margin-bottom: 48px;
-            box-shadow: var(--shadow-medium);
-            border: 2px solid var(--terracotta);
-        }
-
-        .anchor-rules h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: var(--terracotta);
+            padding: 20px 24px;
             margin-bottom: 24px;
-            text-align: center;
         }
 
-        .rules-grid {
+        .key-info-box h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cactus-green);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .key-info-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .key-info-box li {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .key-info-box li::before {
+            content: '✓';
+            color: var(--cactus-green);
+            font-weight: 600;
+        }
+
+        /* ===== TIMING BOX ===== */
+        .timing-box {
+            background: var(--gradient-warm);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+
+        .timing-box h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--sunset-orange);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timing-box p {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+        }
+
+        /* ===== QUICK REFERENCE FOOTER ===== */
+        .quick-ref {
+            background: var(--night-blue);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .quick-ref-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quick-ref h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .quick-ref-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
-        .rule-card {
-            background: var(--terracotta-light);
+        .quick-ref-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
             padding: 20px;
-            border-radius: var(--radius-sm);
-            border-left: 4px solid var(--terracotta);
+            backdrop-filter: blur(10px);
         }
 
-        .rule-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--terracotta);
-            margin-bottom: 12px;
-        }
-
-        .rule-card p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* ===== GLOBAL ANCHORS ===== */
-        .global-anchors {
-            margin-bottom: 48px;
-        }
-
-        .anchors-header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .anchors-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: var(--charcoal);
-            margin-bottom: 8px;
-        }
-
-        .anchors-header p {
-            color: var(--gray-500);
-            font-size: 15px;
-        }
-
-        .anchors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .anchor-card {
-            background: var(--white);
-            padding: 20px;
-            border-radius: var(--radius-sm);
-            box-shadow: var(--shadow-card);
-            border: 1px solid var(--gray-200);
-            border-left: 4px solid var(--sage);
-        }
-
-        .anchor-card h4 {
-            font-size: 11px;
-            font-weight: 700;
+        .quick-ref-card h3 {
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--sage);
+            letter-spacing: 0.5px;
+            opacity: 0.7;
             margin-bottom: 8px;
         }
 
-        .anchor-card .name {
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--charcoal);
+        .quick-ref-card .name {
+            font-weight: 600;
+            font-size: 1.1rem;
             margin-bottom: 4px;
         }
 
-        .anchor-card .address {
-            font-size: 13px;
-            color: var(--gray-500);
+        .quick-ref-card .details {
+            font-size: 0.85rem;
+            opacity: 0.8;
         }
 
         /* ===== FOOTER ===== */
         .footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.6);
             text-align: center;
-            padding: 48px 24px;
-            color: var(--gray-500);
-            font-size: 13px;
+            padding: 24px 20px;
+            font-size: 0.85rem;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .day-nav-inner {
-                padding: 8px 0;
+        /* ===== MOBILE OPTIMIZATIONS ===== */
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 90vh;
+                padding: 30px 16px;
+            }
+
+            .hero-emoji {
+                font-size: 3rem;
+            }
+
+            .hero-dates {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+
+            .quick-info {
+                padding: 30px 16px 40px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .info-card {
+                padding: 16px;
+            }
+
+            .info-card .icon {
+                font-size: 1.5rem;
+            }
+
+            .day-nav {
+                padding: 12px 16px;
             }
 
             .day-nav a {
-                padding: 6px 12px;
+                padding: 8px 12px;
             }
 
-            .hero-banner {
-                min-height: 320px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .container {
-                padding: 24px 16px;
-            }
-
-            .day-header {
-                padding: 20px 24px;
-            }
-
-            .day-header h2 {
-                font-size: 24px;
-            }
-
-            .timeline {
-                padding-left: 28px;
-            }
-
-            .timeline::before {
-                left: 9px;
-            }
-
-            .timeline-dot {
-                left: -28px;
-                width: 20px;
-                height: 20px;
-            }
-
-            .timeline-event.major .timeline-dot {
-                width: 24px;
-                height: 24px;
-                left: -30px;
-            }
-
-            .event-card {
-                padding: 16px 18px;
-            }
-
-            .event-header {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .anchors-grid,
-            .overview-grid,
-            .rules-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .trip-overview,
-            .anchor-rules {
-                padding: 24px;
-            }
-
-            .drive-times ul {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media print {
-            .day-nav {
-                display: none;
+            .days-container {
+                padding: 30px 16px 60px;
             }
 
             .day-section {
-                break-inside: avoid;
-                page-break-inside: avoid;
+                margin-bottom: 40px;
+            }
+
+            .event-card {
+                padding: 20px;
+            }
+
+            .event-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .quick-ref {
+                padding: 40px 16px;
+            }
+
+            .quick-ref-grid {
+                grid-template-columns: 1fr;
             }
         }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .event-card {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .events-list .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .events-list .event-card:nth-child(2) { animation-delay: 0.2s; }
+        .events-list .event-card:nth-child(3) { animation-delay: 0.3s; }
+        .events-list .event-card:nth-child(4) { animation-delay: 0.4s; }
+        .events-list .event-card:nth-child(5) { animation-delay: 0.5s; }
+        .events-list .event-card:nth-child(6) { animation-delay: 0.6s; }
+        .events-list .event-card:nth-child(7) { animation-delay: 0.7s; }
+        .events-list .event-card:nth-child(8) { animation-delay: 0.8s; }
     </style>
 </head>
 
 <body>
-    <!-- STICKY DAY NAVIGATION -->
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-emoji">🌵☀️🏜️</div>
+            <h1>Welcome to Arizona!</h1>
+            <p class="hero-subtitle">Joan & DJ, your desert adventure awaits</p>
+            <div class="hero-dates">
+                <span class="icon">📅</span>
+                <span>December 11–16, 2025</span>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ===== QUICK INFO ===== -->
+    <section class="quick-info">
+        <h2>Your Home Bases</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon">🏨</div>
+                <h3>Your Hotel</h3>
+                <p>Drury Inn & Suites</p>
+                <p class="address">1205 S Price Rd, Chandler</p>
+            </div>
+            <div class="info-card">
+                <div class="icon">🏠</div>
+                <h3>Ryan & Jordyn's</h3>
+                <p>San Palmas</p>
+                <p class="address">Chandler, AZ</p>
+            </div>
+            <div class="info-card">
+                <div class="icon">✈️</div>
+                <h3>Airport</h3>
+                <p>PHX Terminal 4</p>
+                <p class="address">~25–30 min drive</p>
+            </div>
+            <div class="info-card">
+                <div class="icon">🚗</div>
+                <h3>Hotel ↔ Home</h3>
+                <p>~8–12 minutes</p>
+                <p class="address">Quick & easy!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DAY NAVIGATION ===== -->
     <nav class="day-nav">
         <div class="day-nav-inner">
-            <span class="day-nav-label">Jump to</span>
-            <a href="#overview">
-                <span class="day-abbr">INFO</span>
-                <span class="day-date">Overview</span>
-            </a>
             <a href="#day-thu" class="completed">
                 <span class="day-abbr">THU</span>
-                <span class="day-date">Dec 11 ✓</span>
+                <span class="day-num">Dec 11 ✓</span>
             </a>
             <a href="#day-fri" class="completed">
                 <span class="day-abbr">FRI</span>
-                <span class="day-date">Dec 12 ✓</span>
+                <span class="day-num">Dec 12 ✓</span>
             </a>
             <a href="#day-sat">
                 <span class="day-abbr">SAT</span>
-                <span class="day-date">Dec 13</span>
+                <span class="day-num">Dec 13</span>
             </a>
             <a href="#day-sun">
                 <span class="day-abbr">SUN</span>
-                <span class="day-date">Dec 14</span>
+                <span class="day-num">Dec 14</span>
             </a>
             <a href="#day-mon">
                 <span class="day-abbr">MON</span>
-                <span class="day-date">Dec 15</span>
+                <span class="day-num">Dec 15</span>
             </a>
             <a href="#day-tue">
                 <span class="day-abbr">TUE</span>
-                <span class="day-date">Dec 16</span>
-            </a>
-            <a href="#anchors">
-                <span class="day-abbr">REF</span>
-                <span class="day-date">Key Places</span>
+                <span class="day-num">Dec 16</span>
             </a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <div class="hero-banner">
-        <header class="hero">
-            <p class="dates">December 11 - 16, 2025</p>
-            <h1>Joan & DJ's<br>Arizona Getaway</h1>
-            <p class="subtitle">A carefully planned desert adventure</p>
-        </header>
-    </div>
+    <!-- ===== DAYS ===== -->
+    <div class="days-container">
 
-    <div class="container">
-
-        <!-- ========================================== -->
-        <!-- TRIP OVERVIEW -->
-        <!-- ========================================== -->
-        <section class="trip-overview" id="overview">
-            <h2>Trip Overview</h2>
-
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <h4>Dates</h4>
-                    <p class="name">Thursday, Dec 11 – Tuesday, Dec 16, 2025</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Your Base</h4>
-                    <p class="name">San Palmas</p>
-                    <p class="address">1111 N Mission Park Blvd #2016, Chandler, AZ 85224</p>
-                </div>
-                <div class="overview-card">
-                    <h4>Guest Base</h4>
-                    <p class="name">Drury Inn & Suites Phoenix Chandler Fashion Center</p>
-                    <p class="address">1205 S Price Rd, Chandler, AZ 85286</p>
-                </div>
+        <!-- THURSDAY -->
+        <section class="day-section visible" id="day-thu">
+            <div class="day-header">
+                <div class="day-badge completed">✓ Completed</div>
+                <h2>Thursday, December 11</h2>
+                <p class="day-theme">Arrival & Getting Settled</p>
             </div>
 
-            <div class="drive-times">
-                <h4>Key Drive-Time Anchors (Realistic)</h4>
-                <ul>
-                    <li>
-                        <span class="route">San Palmas ↔ Drury</span>
-                        <span class="time">~8–12 minutes</span>
-                    </li>
-                    <li>
-                        <span class="route">San Palmas/Drury ↔ PHX (Terminal 4)</span>
-                        <span class="time">~25–30 minutes</span>
-                    </li>
-                    <li>
-                        <span class="route">Drury ↔ Pima Canyon TH (South Mountain)</span>
-                        <span class="time">~10–15 minutes</span>
-                    </li>
-                    <li>
-                        <span class="route">Pima Canyon ↔ Downtown Mesa (AZMNH)</span>
-                        <span class="time">~30–35 minutes</span>
-                    </li>
-                    <li>
-                        <span class="route">Chandler ↔ Saguaro Lake Marina / Desert Belle</span>
-                        <span class="time">~33–40 miles, ~45–50 minutes</span>
-                    </li>
-                    <li>
-                        <span class="route">Chandler ↔ Prescott (Circle of Life)</span>
-                        <span class="time">~2–2.25 hours each way</span>
-                    </li>
-                    <li>
-                        <span class="route">Chandler ↔ Fairmont Scottsdale Princess</span>
-                        <span class="time">~30–35 minutes</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- THURSDAY, DEC 11 -->
-        <!-- ========================================== -->
-        <section class="day-section" id="day-thu">
-            <div class="day-header completed">
-                <span class="day-label">Thursday, December 11</span>
-                <span class="status-badge done">✓ Completed</span>
-                <h2>Arrival & Soft Landing</h2>
-                <p class="day-theme">Theme: Make arrival gentle; use the check-in gap in a way that feels like vacation, not waiting.</p>
-                <div class="day-highlights">
-                    <span class="highlight-chip"><span class="icon">✈</span> Airport Pickup</span>
-                    <span class="highlight-chip"><span class="icon">🏨</span> Drury Check-in</span>
-                    <span class="highlight-chip"><span class="icon">🍽</span> Welcome Dinner</span>
+            <div class="events-list">
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🛬 11:00 AM</div>
+                    <h3><span class="emoji">✈️</span> Welcome to Phoenix!</h3>
+                    <p>Ryan will be waiting at curbside pickup at Terminal 4. No stress – just grab your bags and head outside!</p>
                 </div>
-            </div>
 
-            <div class="day-content">
-                <!-- MORNING -->
-                <div class="period-label"><span>Morning</span></div>
+                <div class="event-card">
+                    <div class="event-time-badge">🌴 11:45 AM – 3:00 PM</div>
+                    <h3><span class="emoji">🎯</span> Flexible "Choose Your Adventure"</h3>
+                    <p>Hotel check-in is at 3:00 PM, so this time is all yours!</p>
+                    <div class="options-box">
+                        <h4>✨ Your Options</h4>
+                        <ul>
+                            <li>Grab lunch at a wine bar and relax after the flight</li>
+                            <li>Head to San Palmas for pool, hot tub, or a couch nap</li>
+                            <li>Explore around Chandler if you're feeling adventurous</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <div class="timeline">
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">11:00 AM</span>
-                                <span class="activity-badge badge-event">Arrival</span>
-                            </div>
-                            <h4 class="event-title">Arrival (PHX, Terminal 4)</h4>
-                            <div class="event-details">
-                                <p>Joan's flight lands ~11:00 AM (delayed from original 10:38).</p>
-                                <p>Ryan is there for curbside pickup after bathroom + bags.</p>
-                            </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🔑 3:00 PM</div>
+                    <h3><span class="emoji">🏨</span> Check Into Your Hotel</h3>
+                    <p>Get your room, unpack, and settle in at your own pace.</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Drury Inn & Suites</strong>
+                            <span>1205 S Price Rd, Chandler, AZ 85286</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- THE GAP -->
-                <div class="period-label"><span>11:45 AM – 3:00 PM – "The Gap"</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <h4 class="event-title">Check-in is at 3 PM</h4>
-                            <div class="event-details">
-                                <p>Drury check-in starts at 3:00 PM, so mid-day is flexible "Choose Your Adventure" time:</p>
-                            </div>
-                            <div class="options-box">
-                                <h5>Option A – Social lunch + light work</h5>
-                                <ul>
-                                    <li>Head to <strong>The Living Room</strong> or <strong>Whole Foods (Ray Rd wine bar)</strong>.</li>
-                                    <li><strong>Joan:</strong> glass of wine, lunch, reading / people-watching.</li>
-                                    <li><strong>You:</strong> light SDA strategy work on laptop so you're freer at night.</li>
-                                </ul>
-                            </div>
-                            <div class="options-box">
-                                <h5>Option B – Resort vibe at San Palmas</h5>
-                                <ul>
-                                    <li>Go home:</li>
-                                    <li><strong>Joan:</strong> pool, hot tub, clubhouse, or couch nap.</li>
-                                    <li><strong>You:</strong> 60–90 minutes of focused work in your office.</li>
-                                </ul>
-                            </div>
-                            <div class="options-box">
-                                <h5>Option C – Freedom with the car</h5>
-                                <ul>
-                                    <li>If you work at home: Joan can take the car to explore / grab coffee and do her own thing.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">😴 3:30 – 6:30 PM</div>
+                    <h3><span class="emoji">🌅</span> Afternoon Reset</h3>
+                    <p>Take a nap, hit the pool, or walk over to Chandler Fashion Center to explore!</p>
                 </div>
 
-                <!-- AFTERNOON -->
-                <div class="period-label"><span>Afternoon</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">3:00 PM</span>
-                                <span class="activity-badge badge-lodging">Check-in</span>
-                            </div>
-                            <h4 class="event-title">VIP Check-In at Drury</h4>
-                            <div class="event-details">
-                                <p>Get Joan's room, keys, unpack, settle in.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">3:30–6:30 PM</span>
-                            </div>
-                            <h4 class="event-title">Afternoon Reset</h4>
-                            <div class="options-box">
-                                <h5>Joan's options</h5>
-                                <ul>
-                                    <li>Nap & unpack</li>
-                                    <li>Pool / hot tub at Drury</li>
-                                    <li>Walk over to Chandler Fashion Center to wander/shop</li>
-                                </ul>
-                            </div>
-                            <div class="options-box">
-                                <h5>You</h5>
-                                <ul>
-                                    <li>Short "Tactical Ops" work block at San Palmas (SDA/SRS triage, not deep modeling).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EVENING -->
-                <div class="period-label"><span>Evening</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">6:30 PM</span>
-                                <span class="activity-badge badge-food">Dinner</span>
-                            </div>
-                            <h4 class="event-title">Welcome Dinner</h4>
-                            <div class="event-details">
-                                <p>Low-stress: Drury "Kickback" (complimentary light food & drinks 5:30–7:00) or a simple nearby restaurant.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="activity-badge badge-work">Optional</span>
-                            </div>
-                            <h4 class="event-title">Evening – Deep Work Window (Optional)</h4>
-                            <div class="event-details">
-                                <p>Once Joan is back in for the night, you have a late block available (up to ~2 AM) for SDA macro strategy if you want it.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🍽️ 6:30 PM</div>
+                    <h3><span class="emoji">🥂</span> Welcome Dinner</h3>
+                    <p>Low-key first night! The Drury has complimentary "Kickback" food & drinks (5:30–7:00), or we can grab something simple nearby.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- FRIDAY, DEC 12 -->
-        <!-- ========================================== -->
+        <!-- FRIDAY -->
         <section class="day-section" id="day-fri">
-            <div class="day-header completed">
-                <span class="day-label">Friday, December 12</span>
-                <span class="status-badge done">✓ Completed</span>
-                <h2>Snooze, South Mountain, Dinosaurs, Gus's & Christmas at the Princess</h2>
-                <p class="day-theme">This is what you actually did</p>
-                <div class="day-highlights">
-                    <span class="highlight-chip"><span class="icon">🥞</span> Snooze Brunch</span>
-                    <span class="highlight-chip"><span class="icon">🏜</span> Pima Canyon Hike</span>
-                    <span class="highlight-chip"><span class="icon">🦖</span> Dino Museum</span>
-                    <span class="highlight-chip"><span class="icon">🍗</span> Gus's Chicken</span>
-                    <span class="highlight-chip"><span class="icon">🎄</span> Christmas at the Princess</span>
-                </div>
+            <div class="day-header">
+                <div class="day-badge completed">✓ Completed</div>
+                <h2>Friday, December 12</h2>
+                <p class="day-theme">Brunch, Desert Trails & Holiday Lights</p>
             </div>
 
-            <div class="day-content">
-                <!-- MORNING -->
-                <div class="period-label"><span>Morning – Snooze & Pickup</span></div>
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-time-badge">☕ 10:45 AM</div>
+                    <h3><span class="emoji">🚗</span> Ryan Picks You Up</h3>
+                    <p>Meet in the lobby – we're heading to brunch!</p>
+                </div>
 
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">10:45 AM</span>
-                                <span class="activity-badge badge-drive">Pickup</span>
-                            </div>
-                            <h4 class="event-title">Pick up Joan at Drury</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Drury Inn & Suites Phoenix Chandler Fashion Center</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">11:00–11:50 AM</span>
-                                <span class="activity-badge badge-food">Brunch</span>
-                            </div>
-                            <h4 class="event-title">Breakfast at Snooze (Ahwatukee)</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Snooze, an A.M. Eatery – Ahwatukee<br>4901 E Ray Rd, Suite 120, Phoenix, AZ 85044</span>
-                            </div>
-                            <div class="event-details">
-                                <p>Fun, high-energy brunch spot with pancakes, scrambles, etc., open 6:30 am–2:30 pm on weekdays.</p>
-                                <p>Vibe: relaxed, proper vacation brunch to start the day.</p>
-                            </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🥞 11:00 – 11:50 AM</div>
+                    <h3><span class="emoji">🍳</span> Brunch at Snooze</h3>
+                    <p>Fun, high-energy brunch spot famous for creative pancakes, benedicts, and breakfast cocktails. The perfect vacation breakfast!</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Snooze, an A.M. Eatery – Ahwatukee</strong>
+                            <span>4901 E Ray Rd, Suite 120, Phoenix, AZ 85044</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- MIDDAY -->
-                <div class="period-label"><span>Midday – Pima Canyon Trailhead (South Mountain)</span></div>
+                <div class="period-divider"><span>☀️ Midday Adventure</span></div>
 
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">11:50 AM–12:05 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Drive to Pima Canyon Trailhead</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Pima Canyon Trailhead – South Mountain Park & Preserve<br>4500 E Pima Canyon Rd, Phoenix, AZ 85044</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">12:05–12:50 PM</span>
-                                <span class="activity-badge badge-outdoors">Hike</span>
-                            </div>
-                            <h4 class="event-title">Short Hike / Desert Walk</h4>
-                            <div class="event-details">
-                                <p>Easy desert trails radiate from Pima Canyon (Desert Classic, Pima Wash, short loops), all low-elevation and "easy difficulty" per city trail info.</p>
-                                <p>Goal: get genuine Sonoran desert views, not an all-day hike.</p>
-                                <p>Joan can always turn back early and wait at the trailhead benches if she wants.</p>
-                            </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🌵 12:05 – 12:50 PM</div>
+                    <h3><span class="emoji">🥾</span> Desert Walk at South Mountain</h3>
+                    <p>Easy desert trails with gorgeous Sonoran views – saguaros, mountain vistas, and that iconic Arizona landscape. Go as far as you like!</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Pima Canyon Trailhead</strong>
+                            <span>4500 E Pima Canyon Rd, Phoenix, AZ 85044</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- EARLY AFTERNOON -->
-                <div class="period-label"><span>Early Afternoon – Downtown Mesa & Dino Museum + Telemed</span></div>
+                <div class="period-divider"><span>🦖 Afternoon</span></div>
 
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">12:50–1:25 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Drive Pima Canyon → Downtown Mesa</h4>
-                            <div class="event-details">
-                                <p>Head east across the Valley toward downtown Mesa and the museum.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">1:30–2:10 PM</span>
-                                <span class="activity-badge badge-event">Museum</span>
-                            </div>
-                            <h4 class="event-title">Arizona Museum of Natural History (First Pass)</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Arizona Museum of Natural History<br>53 N Macdonald, Mesa, AZ 85201</span>
-                            </div>
-                            <div class="event-details">
-                                <p>Arizona's premier natural history museum, known especially for its dinosaur collection and desert/Southwest exhibits.</p>
-                                <p>Highlight: Dinosaur Mountain – multi-story canyon exhibit with animatronic dinos and a waterfall.</p>
-                                <p>You two did a first lap through the main dino areas and galleries.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">2:10–2:15 PM</span>
-                            </div>
-                            <h4 class="event-title">Walk out to the car</h4>
-                            <div class="event-details">
-                                <p>5-minute walk from the museum / Main St to your parking spot.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">2:15–~2:25 PM</span>
-                                <span class="activity-badge badge-medical">Medical</span>
-                            </div>
-                            <h4 class="event-title">Telemedicine with Randy (in the car)</h4>
-                            <div class="event-details">
-                                <p>Quick 10-minute telemed visit with Randy Kauk from the parked car.</p>
-                                <p>You: phone + headphones, AC on, note pad if needed.</p>
-                                <p>Joan: either sits in the car with you or waits nearby / grabs a drink and meets up right after.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">2:25–2:30 PM</span>
-                            </div>
-                            <h4 class="event-title">Walk back to Downtown Mesa</h4>
-                            <div class="event-details">
-                                <p>5 minutes back; medical stuff = done and out of your head.</p>
-                            </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🦕 1:30 – 3:10 PM</div>
+                    <h3><span class="emoji">🦖</span> Arizona Museum of Natural History</h3>
+                    <p>Home to Dinosaur Mountain – a multi-story canyon exhibit with animatronic dinos and a waterfall! Plus Southwest history and desert life exhibits.</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Arizona Museum of Natural History</strong>
+                            <span>53 N Macdonald, Mesa, AZ 85201</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- MID-AFTERNOON -->
-                <div class="period-label"><span>Mid-Afternoon – Museum Wrap-Up & Gus's</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">2:30–3:10 PM</span>
-                            </div>
-                            <h4 class="event-title">Museum / Main Street Flex</h4>
-                            <div class="event-details">
-                                <ul>
-                                    <li>Finish any remaining exhibits at AzMNH or</li>
-                                    <li>Take a slow Main Street walk, window-shop, decompress a bit post-telemed.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">3:10–4:00 PM</span>
-                                <span class="activity-badge badge-food">Lunch</span>
-                            </div>
-                            <h4 class="event-title">Gus's World Famous Fried Chicken (Mesa)</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Gus's World Famous Fried Chicken<br>212 W Main St, Mesa, AZ 85201</span>
-                            </div>
-                            <div class="event-details">
-                                <p>Hours: 11:00 am–9:00 pm on most days.</p>
-                                <p>Big "late lunch / early dinner": classic Memphis-style fried chicken, sides, sweet tea / beer / wine, pies.</p>
-                            </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🍗 3:10 – 4:00 PM</div>
+                    <h3><span class="emoji">🍗</span> Gus's World Famous Fried Chicken</h3>
+                    <p>Legendary Memphis-style fried chicken – crispy, spicy, and absolutely worth it. A perfect late lunch / early dinner!</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Gus's World Famous Fried Chicken</strong>
+                            <span>212 W Main St, Mesa, AZ 85201</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- LATE AFTERNOON -->
-                <div class="period-label"><span>Late Afternoon – Reset in Chandler</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">4:00–4:30 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Drive Mesa → Chandler (Drury / San Palmas)</h4>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">4:30–5:30 PM</span>
-                            </div>
-                            <h4 class="event-title">Reset Window</h4>
-                            <div class="event-details">
-                                <p><strong>Joan:</strong> nap at Drury, or chill at San Palmas (couch, pool).</p>
-                                <p><strong>You:</strong> optional 30–45 minutes of light work (emails, quick SDA notes) to clear your head before the evening.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">😴 4:30 – 5:30 PM</div>
+                    <h3><span class="emoji">🛋️</span> Reset Before the Evening</h3>
+                    <p>Quick break at the hotel or San Palmas to rest up before the main event!</p>
                 </div>
 
-                <!-- EVENING -->
-                <div class="period-label"><span>Evening – Christmas at the Princess (Fairmont Scottsdale Princess)</span></div>
+                <div class="period-divider"><span>🎄 Evening Magic</span></div>
 
-                <div class="timeline">
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <h4 class="event-title">Event: Christmas at the Princess – General Admission</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Fairmont Scottsdale Princess<br>7575 E Princess Dr, Scottsdale, AZ 85255</span>
-                            </div>
-                            <div class="info-box event-info">
-                                <h5>What's Included</h5>
-                                <p><strong>Hours on Fridays:</strong> 4:00 pm – 11:00 pm (Fri–Sun evenings are 4–11 pm).</p>
-                                <p>General admission gets you into:</p>
-                                <ul>
-                                    <li>Massive light displays (tens of millions of lights), themed villages, rides, and shows across ~65 acres at the resort.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">5:30–6:15 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Drive Chandler → Fairmont Scottsdale Princess</h4>
-                            <div class="event-details">
-                                <p>Plan ~30–35 minutes from San Palmas/Drury to 7575 E Princess Dr.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">6:15–10:00 PM</span>
-                                <span class="activity-badge badge-event">Event</span>
-                            </div>
-                            <h4 class="event-title">Christmas at the Princess</h4>
-                            <div class="event-details">
-                                <p>Wristbands scanned on arrival, then a full evening of:</p>
-                                <ul>
-                                    <li>Lights, shows, train rides, s'mores areas, Ferris wheel, etc.</li>
-                                </ul>
-                                <p>You left when Joan's energy dictated (any time up to 11:00 pm).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AFTER EVENT -->
-                <div class="period-label"><span>After Event – Back to Chandler</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-details">
-                                <p>~30–40 min drive back, then optional late-night deep-work block depending on how wiped you were.</p>
-                            </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">✨ 6:15 – 10:00 PM</div>
+                    <h3><span class="emoji">🎄</span> Christmas at the Princess</h3>
+                    <p>One of Arizona's most spectacular holiday experiences! Tens of millions of lights, themed villages, train rides, Ferris wheel, s'mores, and holiday magic across 65 acres.</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Fairmont Scottsdale Princess</strong>
+                            <span>7575 E Princess Dr, Scottsdale, AZ 85255</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- SATURDAY, DEC 13 -->
-        <!-- ========================================== -->
+        <!-- SATURDAY -->
         <section class="day-section" id="day-sat">
             <div class="day-header">
-                <span class="day-label">Saturday, December 13</span>
-                <span class="status-badge upcoming">Upcoming</span>
-                <h2>Boat Day & Downtown Night</h2>
-                <div class="day-highlights">
-                    <span class="highlight-chip"><span class="icon">💪</span> Gym</span>
-                    <span class="highlight-chip"><span class="icon">💻</span> Power Work Block</span>
-                    <span class="highlight-chip"><span class="icon">🚤</span> Desert Belle Cruise</span>
-                    <span class="highlight-chip"><span class="icon">🍸</span> The Ostrich</span>
-                    <span class="highlight-chip"><span class="icon">🍽</span> Hidden House Dinner</span>
-                </div>
+                <div class="day-badge upcoming">⭐ Coming Up</div>
+                <h2>Saturday, December 13</h2>
+                <p class="day-theme">Lake Cruise & Downtown Chandler</p>
             </div>
 
-            <div class="day-content">
-                <div class="info-box key-changes" style="margin-bottom: 24px;">
-                    <h5>Key Changes (Locked In)</h5>
-                    <ul>
-                        <li>You want to arrive <strong>30–45 minutes early</strong>, not a full hour.</li>
-                        <li>Jordyn goes to the venue solo in the morning.</li>
-                        <li>Joan does <strong>not</strong> go to Grayhawk; she stays in Chandler and joins you only for the boat + evening.</li>
-                        <li>You're working tonight until ~2 AM and will wake around 10 AM.</li>
-                    </ul>
+            <div class="timing-box">
+                <h4>⏰ Today's Schedule</h4>
+                <p>Sleep in and relax this morning! Ryan will pick you up around <strong>12:25 PM</strong> for the lake cruise.</p>
+            </div>
+
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-time-badge">😴 Morning</div>
+                    <h3><span class="emoji">🌅</span> Relaxed Morning</h3>
+                    <p>Sleep in, enjoy the hotel breakfast, hit the pool, or wander over to Chandler Fashion Center. No rush!</p>
                 </div>
 
-                <div class="info-box timing-note" style="margin-bottom: 24px;">
-                    <h5>Timing Formula (Assuming 2:00 PM Cruise)</h5>
-                    <p>If your cruise time is different, shift everything by the same offsets:</p>
-                    <ul>
-                        <li><strong>Pick-up at Drury</strong> = Cruise time – 1h 30m</li>
-                        <li><strong>Leave San Palmas</strong> = Cruise time – 1h 40m</li>
-                        <li><strong>Arrival at Marina</strong> = Cruise time – 40m (target)</li>
-                    </ul>
+                <div class="event-card">
+                    <div class="event-time-badge">🚗 12:25 PM</div>
+                    <h3><span class="emoji">🚗</span> Ryan Picks You Up</h3>
+                    <p>Meet in the Drury lobby – we're heading to the lake!</p>
                 </div>
 
-                <!-- MORNING -->
-                <div class="period-label"><span>Morning – Wake, Gym, Work</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">10:00–10:10 AM</span>
-                                <span class="activity-badge badge-lodging">Wake Up</span>
-                            </div>
-                            <h4 class="event-title">Wake & coffee (San Palmas)</h4>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">10:10–10:40 AM</span>
-                                <span class="activity-badge badge-outdoors">Gym</span>
-                            </div>
-                            <h4 class="event-title">Quick Gym at San Palmas</h4>
-                            <div class="event-details">
-                                <p>30 minutes: get blood moving, nothing crazy.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">10:40–11:10 AM</span>
-                            </div>
-                            <h4 class="event-title">Shower & Get Ready</h4>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">11:10 AM–12:15 PM</span>
-                                <span class="activity-badge badge-work">Work</span>
-                            </div>
-                            <h4 class="event-title">Power Work Block (1 hour)</h4>
-                            <div class="event-details">
-                                <p>SDA/SRS triage + anything time-sensitive so your brain isn't itching on the boat.</p>
-                            </div>
-                            <div class="options-box">
-                                <h5>Meanwhile</h5>
-                                <ul>
-                                    <li><strong>Jordyn:</strong> handles her morning venue visit solo.</li>
-                                    <li><strong>Joan & DJ:</strong> relaxed at Drury (sleep in, pool, TV, mall) until pickup.</li>
-                                </ul>
-                            </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🚤 2:00 – 3:20 PM</div>
+                    <h3><span class="emoji">⛵</span> Desert Belle Lake Cruise</h3>
+                    <p>80–90 minute narrated cruise on beautiful Saguaro Lake! Stunning canyon walls, desert scenery, wildlife spotting, and live music – all from a comfortable boat.</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Desert Belle Cruises – Saguaro Lake</strong>
+                            <span>14011 N Bush Hwy, Mesa, AZ 85215</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- MIDDAY -->
-                <div class="period-label"><span>Midday – Pickup & Drive to Saguaro Lake</span></div>
+                <div class="period-divider"><span>🍸 Evening in Downtown Chandler</span></div>
 
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">12:15 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Leave San Palmas</h4>
-                            <div class="event-details">
-                                <p>8–10 minute drive to Drury.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">12:25 PM</span>
-                                <span class="activity-badge badge-drive">Pickup</span>
-                            </div>
-                            <h4 class="event-title">Pick up Joan & DJ at Drury</h4>
-                            <div class="event-details">
-                                <p>Text at 12:15: "Leaving now, meet me in the lobby at 12:25."</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">12:30 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Leave Drury → Saguaro Lake Marina</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Desert Belle Cruises<br>14011 N Bush Hwy, Mesa, AZ 85215</span>
-                            </div>
-                            <div class="event-details">
-                                <p>Real drive time: ~45–50 minutes via Loop 202 → AZ-87 N (Beeline) → Bush Hwy.</p>
-                                <p>With 50 minutes budgeted, you're on track for:</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">~1:20 PM</span>
-                            </div>
-                            <h4 class="event-title">Arrive Desert Belle / Saguaro Lake</h4>
-                            <div class="event-details">
-                                <p>You're ~40 minutes early for a 2:00 cruise: perfect for your 30–45 min goal.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">1:20–2:00 PM</span>
-                            </div>
-                            <h4 class="event-title">Pre-Cruise Buffer</h4>
-                            <div class="event-details">
-                                <p>Parking, bathrooms, quick photos, short lakeside walk if Joan feels up to it.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🍹 4:45 PM</div>
+                    <h3><span class="emoji">🍸</span> Cocktails at The Ostrich</h3>
+                    <p>Fun craft cocktails in the heart of downtown Chandler. Great way to start the evening!</p>
                 </div>
 
-                <!-- AFTERNOON -->
-                <div class="period-label"><span>Afternoon – Desert Belle Cruise</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">2:00–~3:20 PM</span>
-                                <span class="activity-badge badge-event">Cruise</span>
-                            </div>
-                            <h4 class="event-title">Desert Belle Live-Music / Narrated Cruise</h4>
-                            <div class="event-details">
-                                <p>80–90 minute cruise on Saguaro Lake: canyon walls, desert scenery, possible wildlife, all from an air-conditioned or open-air deck.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🌆 5:30 – 7:30 PM</div>
+                    <h3><span class="emoji">🚶</span> Explore Downtown Chandler</h3>
+                    <p>Walk the square, see the famous Tumbleweed Tree, check out the holiday lights, or grab another drink at Spirit House!</p>
                 </div>
 
-                <!-- LATE AFTERNOON -->
-                <div class="period-label"><span>Late Afternoon – Back to Chandler</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">3:30–4:20 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Drive Saguaro Lake → Downtown Chandler</h4>
-                            <div class="event-details">
-                                <p>Aim to be parked near The Ostrich by around 4:20–4:30.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">4:45 PM</span>
-                                <span class="activity-badge badge-food">Drinks</span>
-                            </div>
-                            <h4 class="event-title">Cocktails at The Ostrich</h4>
-                            <div class="event-details">
-                                <p>Group hang, pre-dinner drinks.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🍽️ 7:45 – 9:15 PM</div>
+                    <h3><span class="emoji">🥘</span> Dinner at Hidden House</h3>
+                    <p>Upscale American cuisine in a beautiful setting – the celebration dinner for everyone together!</p>
                 </div>
 
-                <!-- EVENING -->
-                <div class="period-label"><span>Evening – The Split & Hidden House Dinner</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">5:30–7:30 PM</span>
-                            </div>
-                            <h4 class="event-title">The Split Block</h4>
-                            <div class="options-box">
-                                <h5>Ryan & Jordyn</h5>
-                                <ul>
-                                    <li>If you do need to hit an evening venue visit, this is the time window.</li>
-                                    <li>If not, you stay and treat this as extra sibling/parent time.</li>
-                                </ul>
-                            </div>
-                            <div class="options-box">
-                                <h5>Joan & DJ – "Sibling Social" options</h5>
-                                <ul>
-                                    <li>Stay at The Ostrich for another round.</li>
-                                    <li>Walk the square and see the Tumbleweed Tree / holiday lights.</li>
-                                    <li>Slide over to Spirit House for a quieter cocktail.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">7:45–9:15 PM</span>
-                                <span class="activity-badge badge-food">Dinner</span>
-                            </div>
-                            <h4 class="event-title">Celebration Dinner @ Hidden House</h4>
-                            <div class="event-details">
-                                <p>Anchor dinner for everyone together.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">9:30 PM</span>
-                                <span class="activity-badge badge-food">Nightcap</span>
-                            </div>
-                            <h4 class="event-title">Optional Nightcap</h4>
-                            <div class="event-details">
-                                <p>Spirit House or another nearby spot, depending on energy.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LATE NIGHT -->
-                <div class="period-label"><span>Late Night</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">11:30 PM–2:00 AM</span>
-                                <span class="activity-badge badge-work">Optional</span>
-                            </div>
-                            <h4 class="event-title">Optional Strategy Block</h4>
-                            <div class="event-details">
-                                <p>Only if you're up for it; otherwise, sleep.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🌙 9:30 PM</div>
+                    <h3><span class="emoji">🥃</span> Optional Nightcap</h3>
+                    <p>Spirit House or another nearby spot if you're still feeling it!</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- SUNDAY, DEC 14 -->
-        <!-- ========================================== -->
+        <!-- SUNDAY -->
         <section class="day-section" id="day-sun">
             <div class="day-header">
-                <span class="day-label">Sunday, December 14</span>
-                <span class="status-badge upcoming">Upcoming</span>
-                <h2>DJ Departs, Joan's Resort Day, Your Weekly Planning</h2>
-                <div class="day-highlights">
-                    <span class="highlight-chip"><span class="icon">✈</span> DJ Flies Home</span>
-                    <span class="highlight-chip"><span class="icon">💪</span> Gym</span>
-                    <span class="highlight-chip"><span class="icon">💻</span> Strategy Block</span>
-                    <span class="highlight-chip"><span class="icon">🍽</span> Dinner with Joan</span>
-                </div>
+                <div class="day-badge upcoming">⭐ Coming Up</div>
+                <h2>Sunday, December 14</h2>
+                <p class="day-theme">DJ Heads Home, Joan's Relaxation Day</p>
             </div>
 
-            <div class="day-content">
-                <!-- EARLY -->
-                <div class="period-label"><span>Early – DJ Departure</span></div>
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-time-badge">✈️ Morning</div>
+                    <h3><span class="emoji">👋</span> DJ Flies Home</h3>
+                    <p>Safe travels, DJ! Thanks for being part of this adventure.</p>
+                </div>
 
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="activity-badge badge-event">Flight</span>
-                            </div>
-                            <h4 class="event-title">DJ: Morning flight out of PHX</h4>
-                            <div class="event-details">
-                                <p>DJ: Morning flight out of PHX (exact time per his ticket) using the rental car.</p>
-                                <p>No ride required from you.</p>
-                            </div>
-                        </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">🌴 All Day</div>
+                    <h3><span class="emoji">😌</span> Joan's Resort Day</h3>
+                    <p>This day is all yours! Truly relax and do whatever sounds best.</p>
+                    <div class="options-box">
+                        <h4>✨ Ideas for You</h4>
+                        <ul>
+                            <li>Pool & hot tub day at the Drury – total relaxation</li>
+                            <li>Uber to Desert Botanical Garden for a beautiful walk</li>
+                            <li>Come hang at San Palmas – couch, movies, chill vibes</li>
+                            <li>Spa time or shopping at your own pace</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- LATE MORNING -->
-                <div class="period-label"><span>Late Morning</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">10:00 AM</span>
-                                <span class="activity-badge badge-lodging">Wake Up</span>
-                            </div>
-                            <h4 class="event-title">Ryan wake up</h4>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">11:00–11:30 AM</span>
-                                <span class="activity-badge badge-outdoors">Gym</span>
-                            </div>
-                            <h4 class="event-title">Gym (San Palmas)</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MIDDAY -->
-                <div class="period-label"><span>Midday – Strategy Block + Joan's Options</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">12:30–4:30 PM</span>
-                                <span class="activity-badge badge-work">Deep Work</span>
-                            </div>
-                            <h4 class="event-title">Strategy Work Block (Whole Foods / Peixoto)</h4>
-                            <div class="event-details">
-                                <p><strong>Your focus:</strong></p>
-                                <ul>
-                                    <li>SDA weekly plan, legal/structural notes, ClickUp cleanup.</li>
-                                    <li>SRS emails in a short, contained batch.</li>
-                                </ul>
-                            </div>
-                            <div class="options-box">
-                                <h5>Joan's menu</h5>
-                                <ul>
-                                    <li>Pool + hot tub at Drury, long shower, truly lazy day.</li>
-                                    <li>Uber to Desert Botanical Garden for a walk, then back.</li>
-                                    <li>Come to San Palmas for couch/movie afternoon while you work nearby.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EVENING -->
-                <div class="period-label"><span>Evening</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">5:30–7:30 PM</span>
-                                <span class="activity-badge badge-food">Dinner</span>
-                            </div>
-                            <h4 class="event-title">Dinner with Joan</h4>
-                            <div class="event-details">
-                                <p>Location flexible: Chandler, San Palmas, or a calmer Old Town spot.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">8:00 PM–2:00 AM</span>
-                                <span class="activity-badge badge-work">Deep Work</span>
-                            </div>
-                            <h4 class="event-title">Deep Strategy Protocol</h4>
-                            <div class="event-details">
-                                <p>Big weekly reset:</p>
-                                <ul>
-                                    <li>Finalize what you want ready for Brian and your CPA.</li>
-                                    <li>Tighten SDA macro structure.</li>
-                                    <li>Keep SRS as a small maintenance slice.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🍽️ 5:30 – 7:30 PM</div>
+                    <h3><span class="emoji">🍷</span> Dinner with Ryan</h3>
+                    <p>Low-key dinner, wherever sounds good – Chandler, Old Town, or even takeout at San Palmas.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- MONDAY, DEC 15 -->
-        <!-- ========================================== -->
+        <!-- MONDAY -->
         <section class="day-section" id="day-mon">
             <div class="day-header">
-                <span class="day-label">Monday, December 15</span>
-                <span class="status-badge upcoming">Upcoming</span>
-                <h2>Prescott Road Trip (Grandma Judy)</h2>
-                <div class="day-highlights">
-                    <span class="highlight-chip"><span class="icon">🚗</span> Road Trip</span>
-                    <span class="highlight-chip"><span class="icon">💗</span> Visit Grandma Judy</span>
-                    <span class="highlight-chip"><span class="icon">🍽</span> Lunch in Prescott</span>
-                </div>
+                <div class="day-badge upcoming">⭐ Coming Up</div>
+                <h2>Monday, December 15</h2>
+                <p class="day-theme">Prescott Road Trip to See Grandma Judy</p>
             </div>
 
-            <div class="day-content">
-                <!-- MORNING -->
-                <div class="period-label"><span>Morning – Drive Up</span></div>
+            <div class="timing-box">
+                <h4>🚗 Road Trip Day</h4>
+                <p>About a 2-hour scenic drive each way through beautiful Arizona high country. We'll take our time and make it special.</p>
+            </div>
 
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">9:00 AM</span>
-                                <span class="activity-badge badge-lodging">Wake Up</span>
-                            </div>
-                            <h4 class="event-title">Ryan wake up</h4>
-                        </div>
-                    </div>
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-time-badge">🚗 10:00 AM</div>
+                    <h3><span class="emoji">🚗</span> Ryan Picks You Up</h3>
+                    <p>Meet in the Drury lobby – road trip time!</p>
+                </div>
 
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">10:00 AM</span>
-                                <span class="activity-badge badge-drive">Pickup</span>
-                            </div>
-                            <h4 class="event-title">Leave San Palmas → Pick up Joan at Drury</h4>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🛣️ 10:15 AM – 12:15 PM</div>
+                    <h3><span class="emoji">🏜️</span> Scenic Drive to Prescott</h3>
+                    <p>~2–2.25 hours through changing Arizona landscapes – from desert floor up into the mountains and pine trees.</p>
+                </div>
 
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">10:15 AM–~12:15 PM</span>
-                                <span class="activity-badge badge-drive">Road Trip</span>
-                            </div>
-                            <h4 class="event-title">Drive to Prescott</h4>
-                            <div class="event-details">
-                                <p>~2–2.25 hours via I-10 W → I-17 N → Prescott area.</p>
-                            </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🍽️ 12:15 – 1:00 PM</div>
+                    <h3><span class="emoji">🥗</span> Lunch in Prescott</h3>
+                    <p>Simple, relaxing lunch in the charming downtown area before the visit.</p>
+                </div>
+
+                <div class="event-card highlight">
+                    <div class="event-time-badge">💕 1:00 – 3:00 PM</div>
+                    <h3><span class="emoji">💗</span> Visit Grandma Judy</h3>
+                    <p>Quality time with Grandma Judy at her care home. Take all the time you need.</p>
+                    <div class="event-location">
+                        <span class="loc-icon">📍</span>
+                        <div>
+                            <strong>Circle of Life – Fort Bridger Home</strong>
+                            <span>4340 W Fort Bridger Rd, Prescott, AZ 86305</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- MIDDAY -->
-                <div class="period-label"><span>Midday – Lunch & Visit</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">12:15–1:00 PM</span>
-                                <span class="activity-badge badge-food">Lunch</span>
-                            </div>
-                            <h4 class="event-title">Lunch in Prescott</h4>
-                            <div class="event-details">
-                                <p>Simple, low-key lunch near town center.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">1:00–3:00 PM</span>
-                                <span class="activity-badge badge-family">Family</span>
-                            </div>
-                            <h4 class="event-title">Visit Grandma Judy</h4>
-                            <div class="event-location">
-                                <span class="loc-icon">📍</span>
-                                <span>Circle of Life Alzheimer's / TBI Home – "Fort Bridger Home"<br>4340 W Fort Bridger Rd, Prescott, AZ 86305</span>
-                            </div>
-                            <div class="event-details">
-                                <p>Visiting window: 8 am–5 pm per care plan.</p>
-                            </div>
-                            <div class="options-box">
-                                <h5>Your options</h5>
-                                <ul>
-                                    <li>Stay with Joan & Judy the whole time, or</li>
-                                    <li>Give Joan 60–90 minutes alone and step to Wild Iris Coffee House or another nearby café to do light work and decompress, then return.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🚗 3:00 – 5:30 PM</div>
+                    <h3><span class="emoji">🌅</span> Drive Back to Chandler</h3>
+                    <p>Relaxed drive home as the sun starts to set.</p>
                 </div>
 
-                <!-- LATE AFTERNOON / EVENING -->
-                <div class="period-label"><span>Late Afternoon / Evening</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">3:00–5:30 PM</span>
-                                <span class="activity-badge badge-drive">Drive</span>
-                            </div>
-                            <h4 class="event-title">Drive Prescott → Chandler</h4>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">6:00–7:30 PM</span>
-                                <span class="activity-badge badge-food">Dinner</span>
-                            </div>
-                            <h4 class="event-title">Gentle Dinner</h4>
-                            <div class="event-details">
-                                <p>Very low-key: takeout at San Palmas or something simple close to home.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">8:00 PM–2:00 AM</span>
-                                <span class="activity-badge badge-work">Optional</span>
-                            </div>
-                            <h4 class="event-title">Recovery + Strategy</h4>
-                            <div class="event-details">
-                                <p>Depending on how emotional the day feels:</p>
-                                <ul>
-                                    <li><strong>Option A:</strong> Short journaling + early bed.</li>
-                                    <li><strong>Option B:</strong> Longer deep work if you're in that headspace.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="event-card">
+                    <div class="event-time-badge">🍽️ 6:00 – 7:30 PM</div>
+                    <h3><span class="emoji">🍕</span> Gentle Dinner</h3>
+                    <p>Very low-key – takeout at San Palmas or something simple and comforting.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- TUESDAY, DEC 16 -->
-        <!-- ========================================== -->
+        <!-- TUESDAY -->
         <section class="day-section" id="day-tue">
             <div class="day-header">
-                <span class="day-label">Tuesday, December 16</span>
-                <span class="status-badge upcoming">Upcoming</span>
-                <h2>Joan's Departure</h2>
-                <div class="day-highlights">
-                    <span class="highlight-chip"><span class="icon">✈</span> Joan Flies Home</span>
-                    <span class="highlight-chip"><span class="icon">💻</span> Back to Builder Mode</span>
-                </div>
+                <div class="day-badge upcoming">⭐ Coming Up</div>
+                <h2>Tuesday, December 16</h2>
+                <p class="day-theme">Farewell & Safe Travels!</p>
             </div>
 
-            <div class="day-content">
-                <!-- EARLY -->
-                <div class="period-label"><span>Early</span></div>
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-time-badge">🌅 8:00 AM</div>
+                    <h3><span class="emoji">🚗</span> Ryan Picks You Up</h3>
+                    <p>Last morning! Meet in the Drury lobby for the airport run.</p>
+                </div>
 
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">7:45 AM</span>
-                                <span class="activity-badge badge-lodging">Wake Up</span>
-                            </div>
-                            <h4 class="event-title">Ryan wake up</h4>
-                        </div>
+                <div class="event-card highlight">
+                    <div class="event-time-badge">✈️ 8:45 AM</div>
+                    <h3><span class="emoji">🛫</span> Drop Off at PHX</h3>
+                    <p>Arrive at Terminal 4 with plenty of time for your 9:57 AM flight. Safe travels home!</p>
+                    <div class="key-info-box" style="margin-top: 16px; margin-bottom: 0;">
+                        <h4>✈️ Flight Info</h4>
+                        <ul>
+                            <li>American Airlines AA 2977</li>
+                            <li>Departing 9:57 AM from Terminal 4</li>
+                            <li>~70 minutes buffer – no rush!</li>
+                        </ul>
                     </div>
-
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">8:00 AM</span>
-                                <span class="activity-badge badge-drive">Pickup</span>
-                            </div>
-                            <h4 class="event-title">Pick up Joan at Drury</h4>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event major">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card highlight-card">
-                            <div class="event-header">
-                                <span class="event-time">8:45 AM</span>
-                                <span class="activity-badge badge-event">Drop-off</span>
-                            </div>
-                            <h4 class="event-title">Drop at PHX Terminal 4</h4>
-                            <div class="event-details">
-                                <p>Flight AA 2977 departing 9:57 AM (from your ticket).</p>
-                                <p>This gives ~70 minutes at the airport, which is a comfortable domestic buffer.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- REST OF DAY -->
-                <div class="period-label"><span>Rest of Day</span></div>
-
-                <div class="timeline">
-                    <div class="timeline-event">
-                        <div class="timeline-dot"></div>
-                        <div class="event-card">
-                            <div class="event-header">
-                                <span class="event-time">9:30 AM</span>
-                            </div>
-                            <h4 class="event-title">Back at San Palmas</h4>
-                            <div class="options-box">
-                                <h5>Your options</h5>
-                                <ul>
-                                    <li><strong>Option A:</strong> Nap until ~11:00 AM to recover.</li>
-                                    <li><strong>Option B:</strong> Roll straight into a re-entry work block:
-                                        <ul style="margin-top: 8px; margin-left: 16px;">
-                                            <li>Summarize trip takeaways (family + SDA/SRS)</li>
-                                            <li>Organize what needs to happen over the next 1–2 weeks.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- QUICK ANCHOR RULES -->
-        <!-- ========================================== -->
-        <section class="anchor-rules">
-            <h2>Quick "Anchor Rules" for You</h2>
-            <div class="rules-grid">
-                <div class="rule-card">
-                    <h4>🚤 Boat Day</h4>
-                    <p>Leave San Palmas <strong>1h40</strong> before cruise, pick up at Drury <strong>1h30</strong> before cruise, arrive <strong>~40 min</strong> early.</p>
-                </div>
-                <div class="rule-card">
-                    <h4>✈ Airport Runs</h4>
-                    <p>Assume <strong>25–30 min</strong> drive time → aim for <strong>75–90 min</strong> pre-departure arrival at PHX.</p>
-                </div>
-                <div class="rule-card">
-                    <h4>🚗 Prescott</h4>
-                    <p><strong>2+ hours</strong> each way; build in food + emotional buffer.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- KEY PLACES REFERENCE -->
-        <!-- ========================================== -->
-        <section class="global-anchors" id="anchors">
-            <div class="anchors-header">
-                <h2>Quick Reference: Key Places</h2>
-                <p>All the important addresses and details in one place</p>
-            </div>
-
-            <div class="anchors-grid">
-                <div class="anchor-card">
-                    <h4>Your Base</h4>
-                    <p class="name">San Palmas</p>
-                    <p class="address">1111 N Mission Park Blvd #2016, Chandler, AZ 85224</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Guest Base</h4>
-                    <p class="name">Drury Inn & Suites</p>
-                    <p class="address">1205 S Price Rd, Chandler, AZ 85286<br>(~8–12 min from San Palmas)</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Brunch</h4>
-                    <p class="name">Snooze – Ahwatukee</p>
-                    <p class="address">4901 E Ray Rd Suite 120, Phoenix, AZ 85044<br>Mon–Fri 6:30 am–2:30 pm</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>South Mountain</h4>
-                    <p class="name">Pima Canyon Trailhead</p>
-                    <p class="address">4500 E Pima Canyon Rd, Phoenix, AZ 85044<br>Trailhead: 5 am–7 pm</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Dino Museum</h4>
-                    <p class="name">Arizona Museum of Natural History</p>
-                    <p class="address">53 N Macdonald, Mesa, AZ 85201<br>Tue–Sat 10 am–5 pm, Sun noon–5 pm</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Fried Chicken</h4>
-                    <p class="name">Gus's World Famous</p>
-                    <p class="address">212 W Main St, Mesa, AZ 85201<br>11:00 am–9:00 pm</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Christmas Event</h4>
-                    <p class="name">Fairmont Scottsdale Princess</p>
-                    <p class="address">7575 E Princess Dr, Scottsdale, AZ 85255<br>Fri 4:00 pm–11:00 pm</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Lake Cruise</h4>
-                    <p class="name">Desert Belle Cruises</p>
-                    <p class="address">14011 N Bush Hwy, Mesa, AZ 85215<br>~45–50 min from Chandler</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Grandma Judy</h4>
-                    <p class="name">Circle of Life – Fort Bridger Home</p>
-                    <p class="address">4340 W Fort Bridger Rd, Prescott, AZ 86305<br>~2–2.25 hours from Chandler</p>
-                </div>
-
-                <div class="anchor-card">
-                    <h4>Downtown Chandler</h4>
-                    <p class="name">The Ostrich / Hidden House / Spirit House</p>
-                    <p class="address">Downtown Chandler square area</p>
                 </div>
             </div>
         </section>
 
     </div>
 
+    <!-- ===== QUICK REFERENCE ===== -->
+    <section class="quick-ref">
+        <div class="quick-ref-inner">
+            <h2>📍 Quick Reference</h2>
+            <div class="quick-ref-grid">
+                <div class="quick-ref-card">
+                    <h3>🏨 Your Hotel</h3>
+                    <p class="name">Drury Inn & Suites</p>
+                    <p class="details">1205 S Price Rd, Chandler, AZ 85286</p>
+                </div>
+                <div class="quick-ref-card">
+                    <h3>🏠 Ryan & Jordyn</h3>
+                    <p class="name">San Palmas</p>
+                    <p class="details">1111 N Mission Park Blvd #2016, Chandler</p>
+                </div>
+                <div class="quick-ref-card">
+                    <h3>✈️ Airport</h3>
+                    <p class="name">PHX Terminal 4</p>
+                    <p class="details">~25–30 min from hotel</p>
+                </div>
+                <div class="quick-ref-card">
+                    <h3>🚨 Emergency</h3>
+                    <p class="name">Call Ryan!</p>
+                    <p class="details">For anything you need</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <p>Generated by Claude Opus 4.5 | December 12, 2025</p>
+        <p>Made with ❤️ for Joan & DJ's Arizona Adventure</p>
     </footer>
 
-    <!-- Active nav highlighting -->
+    <!-- ===== SCRIPTS ===== -->
     <script>
-        document.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.day-section, .trip-overview');
-            const navLinks = document.querySelectorAll('.day-nav a');
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.day-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('.day-section');
+        const navLinks = document.querySelectorAll('.day-nav a');
+
+        window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop - 150;
                 if (pageYOffset >= sectionTop) {
                     current = section.getAttribute('id');
                 }
