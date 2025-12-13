@@ -580,6 +580,51 @@
             color: var(--charcoal);
         }
 
+        /* ===== RYAN'S WORK BLOCKS ===== */
+        .ryan-notes {
+            background: linear-gradient(135deg, rgba(107, 114, 128, 0.08), rgba(75, 85, 99, 0.05));
+            border: 1px dashed rgba(107, 114, 128, 0.3);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-top: 24px;
+        }
+
+        .ryan-notes h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--soft-gray);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ryan-notes ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ryan-notes li {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .ryan-notes li::before {
+            content: '•';
+            color: var(--soft-gray);
+            font-weight: 600;
+        }
+
+        .ryan-notes .work-time {
+            font-weight: 600;
+            color: var(--soft-gray);
+        }
+
         /* ===== QUICK REFERENCE FOOTER ===== */
         .quick-ref {
             background: var(--night-blue);
@@ -869,6 +914,15 @@
                     <h3><span class="emoji">🥂</span> Welcome Dinner</h3>
                     <p>Low-key first night! The Drury has complimentary "Kickback" food & drinks (5:30–7:00), or we can grab something simple nearby.</p>
                 </div>
+
+                <div class="ryan-notes">
+                    <h4>💻 Ryan's Work Windows</h4>
+                    <ul>
+                        <li><span class="work-time">11:45 AM – 3:00 PM (The Gap):</span> Light SDA strategy work on laptop so you're freer at night</li>
+                        <li><span class="work-time">3:30 – 6:30 PM:</span> Short "Tactical Ops" work block at San Palmas (SDA/SRS triage, not deep modeling)</li>
+                        <li><span class="work-time">Evening (after Joan's in for the night):</span> Deep Work Window available up to ~2 AM for SDA macro strategy if you want it</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -963,6 +1017,14 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="ryan-notes">
+                    <h4>💻 Ryan's Work Windows</h4>
+                    <ul>
+                        <li><span class="work-time">4:30 – 5:30 PM:</span> Optional 30–45 minutes of light work (emails, quick SDA notes) to clear your head before the evening</li>
+                        <li><span class="work-time">After Event (~10:30 PM+):</span> ~30–40 min drive back, then optional late-night deep-work block depending on how wiped you are</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -1030,6 +1092,15 @@
                     <h3><span class="emoji">🥃</span> Optional Nightcap</h3>
                     <p>Spirit House or another nearby spot if you're still feeling it!</p>
                 </div>
+
+                <div class="ryan-notes">
+                    <h4>💻 Ryan's Work Windows</h4>
+                    <ul>
+                        <li><span class="work-time">10:00 – 10:40 AM:</span> Wake, coffee, quick gym at San Palmas (30 min)</li>
+                        <li><span class="work-time">11:10 AM – 12:15 PM:</span> Power Work Block (1 hour) – SDA/SRS triage + anything time-sensitive so your brain isn't itching on the boat</li>
+                        <li><span class="work-time">11:30 PM – 2:00 AM:</span> Optional Strategy Block – only if you're up for it; otherwise, sleep</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -1067,6 +1138,27 @@
                     <div class="event-time-badge">🍽️ 5:30 – 7:30 PM</div>
                     <h3><span class="emoji">🍷</span> Dinner with Ryan</h3>
                     <p>Low-key dinner, wherever sounds good – Chandler, Old Town, or even takeout at San Palmas.</p>
+                </div>
+
+                <div class="ryan-notes">
+                    <h4>💻 Ryan's Work Windows</h4>
+                    <ul>
+                        <li><span class="work-time">10:00 AM:</span> Wake up</li>
+                        <li><span class="work-time">11:00 – 11:30 AM:</span> Gym (San Palmas)</li>
+                        <li><span class="work-time">12:30 – 4:30 PM:</span> Strategy Work Block (Whole Foods / Peixoto)
+                            <ul style="margin-top: 8px; margin-left: 20px; list-style: disc;">
+                                <li style="display: list-item;">SDA weekly plan, legal/structural notes, ClickUp cleanup</li>
+                                <li style="display: list-item;">SRS emails in a short, contained batch</li>
+                            </ul>
+                        </li>
+                        <li><span class="work-time">8:00 PM – 2:00 AM:</span> Deep Strategy Protocol – Big weekly reset:
+                            <ul style="margin-top: 8px; margin-left: 20px; list-style: disc;">
+                                <li style="display: list-item;"><strong>Finalize what you want ready for Brian and your CPA</strong></li>
+                                <li style="display: list-item;">Tighten SDA macro structure</li>
+                                <li style="display: list-item;">Keep SRS as a small maintenance slice</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -1127,6 +1219,20 @@
                     <h3><span class="emoji">🍕</span> Gentle Dinner</h3>
                     <p>Very low-key – takeout at San Palmas or something simple and comforting.</p>
                 </div>
+
+                <div class="ryan-notes">
+                    <h4>💻 Ryan's Work Windows</h4>
+                    <ul>
+                        <li><span class="work-time">9:00 AM:</span> Wake up</li>
+                        <li><span class="work-time">1:00 – 3:00 PM (During Visit):</span> Option to give Joan 60–90 minutes alone with Judy and step to Wild Iris Coffee House or another nearby café to do light work and decompress, then return</li>
+                        <li><span class="work-time">8:00 PM – 2:00 AM:</span> Recovery + Strategy – depending on how emotional the day feels:
+                            <ul style="margin-top: 8px; margin-left: 20px; list-style: disc;">
+                                <li style="display: list-item;"><strong>Option A:</strong> Short journaling + early bed</li>
+                                <li style="display: list-item;"><strong>Option B:</strong> Longer deep work if you're in that headspace</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -1157,6 +1263,24 @@
                             <li>~70 minutes buffer – no rush!</li>
                         </ul>
                     </div>
+                </div>
+
+                <div class="ryan-notes">
+                    <h4>💻 Ryan's Work Windows</h4>
+                    <ul>
+                        <li><span class="work-time">7:45 AM:</span> Wake up</li>
+                        <li><span class="work-time">9:30 AM – Back at San Palmas:</span> Re-entry options:
+                            <ul style="margin-top: 8px; margin-left: 20px; list-style: disc;">
+                                <li style="display: list-item;"><strong>Option A:</strong> Nap until ~11:00 AM to recover</li>
+                                <li style="display: list-item;"><strong>Option B:</strong> Roll straight into a re-entry work block:
+                                    <ul style="margin-top: 4px; margin-left: 20px; list-style: circle;">
+                                        <li style="display: list-item;">Summarize trip takeaways (family + SDA/SRS)</li>
+                                        <li style="display: list-item;">Organize what needs to happen over the next 1–2 weeks</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
